@@ -518,7 +518,7 @@ public class Main {
                                             sc.nextLine();
                                         }
                                     }else{
-                                        System.out.println("Nao eh possivel remover, lista vazia\n");
+                                        System.out.println("Nao eh possivel selecionar conta, lista vazia\n");
                                     }
                                     break;
 
