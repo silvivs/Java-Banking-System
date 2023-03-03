@@ -272,7 +272,7 @@
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
             Agency icompAgencies = new Agency();
-            Bank icomp = new Bank("Icomp");
+            Bank icomp = new Bank("AMAZONIA");
             int mainOp;
 
             System.out.println("Bem vindo ao sistema de gerenciamento do Banco " + icomp.getBankName() + "\n");
