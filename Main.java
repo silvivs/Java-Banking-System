@@ -1,5 +1,11 @@
     import java.util.Scanner;
 
+    class Utilities{
+        public boolean checkNull(int n){
+            return n == 0;
+        }
+    }
+
     class Account{
         private int accountID;
         private String accountName;
@@ -33,7 +39,7 @@
         }
     }
 
-    class Agency{
+    class Agency extends Utilities{
         private String agencyName;
         private int agencyNumber;
         private int LEN = 10, index = 0; 
@@ -74,10 +80,6 @@
                 }
             }
             accounts[index - 1] = null;
-        }
-
-        public boolean checkNull(){
-            return index == 0;
         }
 
         public String searchNameAccount(int number){
@@ -174,7 +176,7 @@
 
     }
 
-    class Bank{
+    class Bank extends Utilities{
         private int index = 0, LEN = 10;
         private String bankName;
         private Agency[] agencies = new Agency[LEN];
@@ -192,10 +194,6 @@
         }
         public int getLEN(){
             return LEN;
-        }
-
-        public boolean checkNull(){
-            return index == 0;
         }
 
         public boolean checkInput(int input){
@@ -272,7 +270,7 @@
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
             Agency icompAgencies = new Agency();
-            Bank icomp = new Bank("AMAZONIA");
+            Bank icomp = new Bank("IComp");
             int mainOp;
 
             System.out.println("Bem vindo ao sistema de gerenciamento do Banco " + icomp.getBankName() + "\n");
@@ -324,7 +322,7 @@
                     break;
 
                     case 2:
-                    if(icomp.checkNull() == false){
+                    if(icomp.checkNull(icomp.getIndex()) == false){
                         try{
                             System.out.println("Digite o numero da agencia");
                             int agencyNumber = sc.nextInt();
@@ -347,7 +345,7 @@
                     break;
 
                     case 4:
-                    if(icomp.checkNull() == false){
+                    if(icomp.checkNull(icomp.getIndex()) == false){
                         try{
                             System.out.println("Digite o numero da agencia");
                             int agencyNumber = sc.nextInt();
@@ -396,7 +394,7 @@
                                         break;
 
                                         case 2:
-                                        if(icompAgencies.checkNull() == false){
+                                        if(icompAgencies.checkNull(icompAgencies.getIndex()) == false){
                                             try{
                                                 System.out.println("Digite o numero da conta");
                                                 int accountNumber = sc.nextInt();
@@ -419,7 +417,7 @@
                                         break;
 
                                         case 4:
-                                        if(icompAgencies.checkNull() == false){
+                                        if(icompAgencies.checkNull(icompAgencies.getIndex()) == false){
                                             try{
                                                 System.out.println("Digite o numero da conta");
                                                 int accountNumber = sc.nextInt();
